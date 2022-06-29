@@ -1,9 +1,9 @@
 ### 合约说明：
     部署的合约共有四个：
-    1、NFT合约，contracts/art/TsArt.sol
+    1、NFT合约，contracts/market/CFXBJGENESIS.sol （这是1.0版本，建议使用最新的2.0版本。详见https://forum.conflux.fun/t/conflux/15538 Conflux社区NFT标准规范及DEMO）
     2、交易合约，contracts/market/FixedExchangeV2.sol
     3、拍卖合约，contracts/market/EnglishExchange.sol
-	4、usdt-cfx价格预言机
+    4、usdt-cfx价格预言机
     其他合约为相关工具和依赖。
     
     交易合约，目前都使用"签名"模式而非"质押"模式。
@@ -11,7 +11,7 @@
     合约已使用conflux赞助特性。（测试时候未开启，需测试账户从水龙头领测试cfx。正式上线前取消掉注释即可）
     部分函数已有防重入判断。
     目前好像未禁止合约发起请求。（可能不需要禁止？）
-    交易合约改手续费函数有时间锁？改手续费时间锁默认1天，手续费最大不超过0.3cfx?
+    交易合约改手续费函数有时间锁，改手续费时间锁默认1天，手续费最大不超过0.3cfx
    
 ### 合约编译部署说明：
 
@@ -31,7 +31,7 @@
     }
 
     二、编译
-    方法1、cfxtruffle compile 这个比较快（宇）
+    方法1、cfxtruffle compile 这个比较快（斑）
     方法2、codevs插件solidity0.0.113编译。(chy)
     下载编译器https://github.com/ethereum/solc-bin/blob/gh-pages/bin/soljson-v0.6.9%2Bcommit.3e3065ac.js（需翻墙）。
     进入solidity设置，将默认编辑器改为localFile，将下载好的编译器本地路径填上（chy）
@@ -39,7 +39,7 @@
     编译好的文件默认在bin\contracts\下面。
     
     三、部署
-    方法一（宇）
+    方法一（斑）
     cfxtruffle migration --network [wtest] [--reset] 
 
     编译完再在studio部署
@@ -49,8 +49,6 @@
 
 ### 合约接口说明：usdt和cfx的价格预言机
 
-	合约测试网地址：cfxtest:type.contract:ach55s901h51vhyh6emrubmy22mrek5zgevrjm7xmp
-	合约正式网地址：CFX:TYPE.CONTRACT:ACH55S901H51VHYH6EMRUBMY22MREK5ZGE5G5453SG
 	abi：/bin/art/PriceOracle2.json
 
 	一、操作接口
@@ -64,13 +62,6 @@
 	)
 
 ### 合约接口说明: NFT铸造和读取
-
-	合约地址：cfxtest:aca5h91pdcfvtanz245t33vt0tmth79saewc901wkt
-	新地址：CFXTEST:TYPE.CONTRACT:ACA5H91PDCFVTANZ245T33VT0TMTH79SAEWC901WKT
-
-	又部署了几个NFT合约如下，但是应该可以用上方之前的NFT的合约
-	测试部署1：cfxtest:type.contract:achndtbpc787vcdkcj8513d3ep1nkb9y5ef83ere9r
-	测试部署2：cfxtest:type.contract:ach91n849dshcp8n96c8vtmz1cz4n1144e472zjve4
 
 	abi：/build/TsArt.json	中的abi: []
 
@@ -153,12 +144,6 @@
 
 ### 合约接口说明: EnglishExchange 英式拍卖（签名模式）
 
-	测试网合约地址，注释掉签名的 cfxtest:type.contract:acheu9gv5gx4skakb1tb5x60n1fh2nw2cuk233n4xw
-	测试网合约地址，需要签名的   cfxtest:type.contract:ache6k12yru4047h2g9ccd10gx02675puyfvtntzff
-	abi：/bin/contracts/market/EnglishExchange.json	中的abi:
-	
-    测试网合约地址，注释掉签名的 cfxtest:type.contract:acheu9gv5gx4skakb1tb5x60n1fh2nw2cuk233n4xw
-	测试网合约地址，需要签名的   cfxtest:type.contract:ache6k12yru4047h2g9ccd10gx02675puyfvtntzff
 	abi：/bin/contracts/market/EnglishExchange.json	中的abi:
 	
     一、操作接口
@@ -265,7 +250,6 @@
 	
 ### 合约接口说明: FixedExchange V2 (一口价，签名模式)
 
-	测试网合约地址 cfxtest:type.contract:acen3b1y7esr6vbx6j3f1hy7s23gd1nkhjysbmv4uh
 	abi：/bin/contracts/market/FixedExchangeV2.json	中的abi:
 
 	关于签名的测试：
@@ -363,13 +347,12 @@
         address _contractFeeRecipient
     ) 
 
-	4.2 设置英式拍卖的什么？模式？
+	4.2 设置另一个合约地址，防止同时下单拍卖和一口价
 	setEnglishExchange(IExchange _iExchange)
 
 ### 合约接口说明：FixedExchange V1 (一口价，质押模式)（已停用，改用上方的V2）
 
-	合约地址：cfxtest:acd0h6r3btf5nagdtcnp2p1kny30pzrn9y862aszzm
-	新地址 : CFXTEST:TYPE.CONTRACT:ACD0H6R3BTF5NAGDTCNP2P1KNY30PZRN9Y862ASZZM
+	
 	abi: /build/FixedExchange.json  中的abi: []
 	
 	前端：
