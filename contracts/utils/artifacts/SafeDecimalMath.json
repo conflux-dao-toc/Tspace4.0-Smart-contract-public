@@ -1,0 +1,162 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"görli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"linkReferences": {},
+			"object": "610118610026600b82828239805160001a60731461001957fe5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361060655760003560e01c8063313ce56714606a578063864029e7146082578063907af6c01460885780639d8e217714608e578063d5e5e6e6146094578063def4419d14609a575b600080fd5b607060a0565b60408051918252519081900360200190f35b607060a5565b607060b5565b607060c1565b607060cd565b607060dd565b601281565b6b033b2e3c9fd0803ce800000081565b670de0b6b3a764000090565b670de0b6b3a764000081565b6b033b2e3c9fd0803ce800000090565b601b8156fea26469706673582212206d7ca1850df01cde3cca768493789ca4cb1769726d63165bf55c08e12f13400e64736f6c63430006090033",
+			"opcodes": "PUSH2 0x118 PUSH2 0x26 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH2 0x19 JUMPI INVALID JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH1 0x65 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x313CE567 EQ PUSH1 0x6A JUMPI DUP1 PUSH4 0x864029E7 EQ PUSH1 0x82 JUMPI DUP1 PUSH4 0x907AF6C0 EQ PUSH1 0x88 JUMPI DUP1 PUSH4 0x9D8E2177 EQ PUSH1 0x8E JUMPI DUP1 PUSH4 0xD5E5E6E6 EQ PUSH1 0x94 JUMPI DUP1 PUSH4 0xDEF4419D EQ PUSH1 0x9A JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x70 PUSH1 0xA0 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x70 PUSH1 0xA5 JUMP JUMPDEST PUSH1 0x70 PUSH1 0xB5 JUMP JUMPDEST PUSH1 0x70 PUSH1 0xC1 JUMP JUMPDEST PUSH1 0x70 PUSH1 0xCD JUMP JUMPDEST PUSH1 0x70 PUSH1 0xDD JUMP JUMPDEST PUSH1 0x12 DUP2 JUMP JUMPDEST PUSH12 0x33B2E3C9FD0803CE8000000 DUP2 JUMP JUMPDEST PUSH8 0xDE0B6B3A7640000 SWAP1 JUMP JUMPDEST PUSH8 0xDE0B6B3A7640000 DUP2 JUMP JUMPDEST PUSH12 0x33B2E3C9FD0803CE8000000 SWAP1 JUMP JUMPDEST PUSH1 0x1B DUP2 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH14 0x7CA1850DF01CDE3CCA768493789C LOG4 0xCB OR PUSH10 0x726D63165BF55C08E12F SGT BLOCKHASH 0xE PUSH5 0x736F6C6343 STOP MOD MULMOD STOP CALLER ",
+			"sourceMap": "178:7143:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "730000000000000000000000000000000000000000301460806040526004361060655760003560e01c8063313ce56714606a578063864029e7146082578063907af6c01460885780639d8e217714608e578063d5e5e6e6146094578063def4419d14609a575b600080fd5b607060a0565b60408051918252519081900360200190f35b607060a5565b607060b5565b607060c1565b607060cd565b607060dd565b601281565b6b033b2e3c9fd0803ce800000081565b670de0b6b3a764000090565b670de0b6b3a764000081565b6b033b2e3c9fd0803ce800000090565b601b8156fea26469706673582212206d7ca1850df01cde3cca768493789ca4cb1769726d63165bf55c08e12f13400e64736f6c63430006090033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH1 0x65 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x313CE567 EQ PUSH1 0x6A JUMPI DUP1 PUSH4 0x864029E7 EQ PUSH1 0x82 JUMPI DUP1 PUSH4 0x907AF6C0 EQ PUSH1 0x88 JUMPI DUP1 PUSH4 0x9D8E2177 EQ PUSH1 0x8E JUMPI DUP1 PUSH4 0xD5E5E6E6 EQ PUSH1 0x94 JUMPI DUP1 PUSH4 0xDEF4419D EQ PUSH1 0x9A JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x70 PUSH1 0xA0 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x70 PUSH1 0xA5 JUMP JUMPDEST PUSH1 0x70 PUSH1 0xB5 JUMP JUMPDEST PUSH1 0x70 PUSH1 0xC1 JUMP JUMPDEST PUSH1 0x70 PUSH1 0xCD JUMP JUMPDEST PUSH1 0x70 PUSH1 0xDD JUMP JUMPDEST PUSH1 0x12 DUP2 JUMP JUMPDEST PUSH12 0x33B2E3C9FD0803CE8000000 DUP2 JUMP JUMPDEST PUSH8 0xDE0B6B3A7640000 SWAP1 JUMP JUMPDEST PUSH8 0xDE0B6B3A7640000 DUP2 JUMP JUMPDEST PUSH12 0x33B2E3C9FD0803CE8000000 SWAP1 JUMP JUMPDEST PUSH1 0x1B DUP2 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH14 0x7CA1850DF01CDE3CCA768493789C LOG4 0xCB OR PUSH10 0x726D63165BF55C08E12F SGT BLOCKHASH 0xE PUSH5 0x736F6C6343 STOP MOD MULMOD STOP CALLER ",
+			"sourceMap": "178:7143:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;300:37;;;:::i;:::-;;;;;;;;;;;;;;;;565:73;;;:::i;826:76::-;;;:::i;439:52::-;;;:::i;978:91::-;;;:::i;343:50::-;;;:::i;300:37::-;335:2;300:37;:::o;565:73::-;604:34;565:73;:::o;826:76::-;470:21;826:76;:::o;439:52::-;470:21;439:52;:::o;978:91::-;604:34;978:91;:::o;343:50::-;391:2;343:50;:::o"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "56000",
+				"executionCost": "133",
+				"totalCost": "56133"
+			},
+			"external": {
+				"PRECISE_UNIT()": "182",
+				"UNIT()": "226",
+				"decimals()": "160",
+				"highPrecisionDecimals()": "270",
+				"preciseUnit()": "248",
+				"unit()": "204"
+			},
+			"internal": {
+				"_divideDecimalRound(uint256,uint256,uint256)": "infinite",
+				"_multiplyDecimalRound(uint256,uint256,uint256)": "infinite",
+				"decimalToPreciseDecimal(uint256)": "infinite",
+				"divideDecimal(uint256,uint256)": "infinite",
+				"divideDecimalRound(uint256,uint256)": "infinite",
+				"divideDecimalRoundPrecise(uint256,uint256)": "infinite",
+				"multiplyDecimal(uint256,uint256)": "infinite",
+				"multiplyDecimalRound(uint256,uint256)": "infinite",
+				"multiplyDecimalRoundPrecise(uint256,uint256)": "infinite",
+				"preciseDecimalToDecimal(uint256)": "infinite"
+			}
+		},
+		"methodIdentifiers": {
+			"PRECISE_UNIT()": "864029e7",
+			"UNIT()": "9d8e2177",
+			"decimals()": "313ce567",
+			"highPrecisionDecimals()": "def4419d",
+			"preciseUnit()": "d5e5e6e6",
+			"unit()": "907af6c0"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "PRECISE_UNIT",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "UNIT",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "decimals",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "highPrecisionDecimals",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "preciseUnit",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "unit",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		}
+	]
+}

@@ -1,0 +1,71 @@
+{
+	"compiler": {
+		"version": "0.6.9+commit.3e3065ac"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "hash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "signerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "isValidSignature",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "isValid",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/libs/LibSignatureValidator.sol": "LibSignatureValidator"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/libs/LibSignatureValidator.sol": {
+			"keccak256": "0x583cfefe36e0c3ffcf46353201aef27f77f6adf9446fd07959083d355219956f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0717e17c33ffc044b34e10cfcf1a0bd6c0ff0860ab2671c7ff6134ddf91a3df4",
+				"dweb:/ipfs/QmP5cs5eFQTkxKkDcp4UCEBPKbnXinWmxRMnbr2raiU97V"
+			]
+		}
+	},
+	"version": 1
+}

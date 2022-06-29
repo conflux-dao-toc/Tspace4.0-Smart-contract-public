@@ -1,0 +1,76 @@
+{
+	"compiler": {
+		"version": "0.6.9+commit.3e3065ac"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "EIP712_DOMAIN_HASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "chainId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/libs/LibOrder.sol": "LibOrder"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/libs/LibEIP712.sol": {
+			"keccak256": "0xa5d8de1142f6cbbe28d014f52a886f934f47076e17d91af6cec5d04fcee12a59",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://946271e8ca962d1cda119dfb1213eb32d6b275f241d7634c4cbed3b63677629a",
+				"dweb:/ipfs/QmSfMFYf4rUXNVNSC69mSHmKudQACECD8tXu72Mh4Aye44"
+			]
+		},
+		"contracts/libs/LibOrder.sol": {
+			"keccak256": "0x3e5b50d435db0b16e239c51da3df33903ec595ad9f377180f235dccc0b26f263",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://65696d3c5ac3d945030844ab5342af523d35c7baee20b9a3c991c6381a7555bf",
+				"dweb:/ipfs/QmWrwMyfftG9vbBBrMZwET6tUTN9o5CGRpyv65XTSqPwex"
+			]
+		}
+	},
+	"version": 1
+}

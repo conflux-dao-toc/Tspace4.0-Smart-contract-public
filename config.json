@@ -1,0 +1,9 @@
+{
+  "language": "",
+  "main": "./contracts/FixedExchange.sol",
+  "deploy": "./build/contracts/FixedExchange.json",
+  "compilers": {
+    "cfxtruffle": "",
+    "solc": "0.6.9"
+  }
+}

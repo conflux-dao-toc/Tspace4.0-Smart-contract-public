@@ -1,0 +1,1052 @@
+{
+	"compiler": {
+		"version": "0.6.9+commit.3e3065ac"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_contractFeePercentage",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_contractFeeRecipient",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "orderHash",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "creator",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "feeRecipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "assetAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "currencyAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "senderAddress",
+						"type": "address"
+					}
+				],
+				"name": "Cancel",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "feePercentage",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "feeRecipient",
+						"type": "address"
+					}
+				],
+				"name": "ContractFeeParamsUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "orderHash",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "feeRecipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "contractFee",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "senderAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "assetAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "taker",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "currencyAddress",
+						"type": "address"
+					}
+				],
+				"name": "Fill",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "Paused",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "Unpaused",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "EIP712_DOMAIN_HASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "FEE_UPDATE_COOLDOWN",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_CONTRACT_FEE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "taker",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "operator",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "orderType",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "startPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "endTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "salt",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "assetAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "currencyAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "feeRecipient",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "feePercentage",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct LibOrder.Order",
+						"name": "order",
+						"type": "tuple"
+					}
+				],
+				"name": "calculateFillResults",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "tradePrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "fee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "contractFee",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Exchanger.FillResults",
+						"name": "fillResults",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "taker",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "operator",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "orderType",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "startPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "endTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "salt",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "assetAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "currencyAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "feeRecipient",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "feePercentage",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct LibOrder.Order",
+						"name": "order",
+						"type": "tuple"
+					}
+				],
+				"name": "cancelOrder",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"name": "cancelled",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "chainId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "contractFeePercentage",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "contractFeeRecipient",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "taker",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "operator",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "orderType",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "startPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "endTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "salt",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "assetAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "currencyAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "feeRecipient",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "feePercentage",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct LibOrder.Order",
+						"name": "order",
+						"type": "tuple"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "fillOrder",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"name": "filled",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "taker",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "operator",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "orderType",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "startPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "endTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "salt",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "assetAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "currencyAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "feeRecipient",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "feePercentage",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct LibOrder.Order",
+						"name": "order",
+						"type": "tuple"
+					}
+				],
+				"name": "getOrderInfo",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "enum LibOrder.OrderStatus",
+								"name": "orderStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "orderHash",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "bool",
+								"name": "filled",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct LibOrder.OrderInfo",
+						"name": "orderInfo",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "taker",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "operator",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "orderType",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "startPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "endTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "salt",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "assetAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "currencyAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "feeRecipient",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "feePercentage",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct LibOrder.Order",
+						"name": "order",
+						"type": "tuple"
+					}
+				],
+				"name": "getPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "hash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "signerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "isValidSignature",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "isValid",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "mostRecentTimestamp",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "paused",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_contractFeePercentage",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_contractFeeRecipient",
+						"type": "address"
+					}
+				],
+				"name": "setContractFeeParams",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"paused()": {
+					"details": "Returns true if the contract is paused, and false otherwise."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/market/EnglishExchange.sol": "Exchanger"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/GSN/Context.sol": {
+			"keccak256": "0xdb26cbf4d028490f49831a7865c2fe1b28db44b535ca8d343785a3b768aae183",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://840b14ce0315c47d49ba328f1f9fa7654ded1c9e1559e6c5e777a7b2dc28bf0a",
+				"dweb:/ipfs/QmTLLabn4wcfGro9LEmUXUN2nwKqZSotXMvjDCLXEnLtZP"
+			]
+		},
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0x4bd6402ca6b3419008c2b482aff54e66836e8cb4eba2680e42ac5884ae6424fc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8f9f711fb8d0d92aeea1c327e3845d13ca1fa8f142e47f8723cd5b3106fb29a3",
+				"dweb:/ipfs/QmVQUReDW9f4zGqhizwHnyU8EntMs95tbASdqkGncnikba"
+			]
+		},
+		"@openzeppelin/contracts/introspection/IERC165.sol": {
+			"keccak256": "0xfa152b6e88a1dc50780e8f1580426dc23ad2e1e2c2f086a088adf206a202f453",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5127b264994adab88fae419b1c493efc5acd07134c19ee5c0397e50018291ebf",
+				"dweb:/ipfs/QmWwJZVhvdmvUCdimbb6R2Jiu59zjPqm6XTMchM6LaEHAp"
+			]
+		},
+		"@openzeppelin/contracts/introspection/IERC1820Registry.sol": {
+			"keccak256": "0xdf8d7d1a119fc0d9f73a5c7a5d21bb0a4e0acb2a61e393c26334d397db628768",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1e471d73d901c48a465167257403f331454f4c34a945fb5cec10a57690193686",
+				"dweb:/ipfs/QmemL8Nxf6SdTkQPq2SZMyNpkMAts5sL2dB2iHktzgPKeR"
+			]
+		},
+		"@openzeppelin/contracts/math/SafeMath.sol": {
+			"keccak256": "0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5",
+				"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
+			"keccak256": "0x31691ad0817f8cb338531b78d2ab2989027d9f27e6f8e62492b754fed9429b10",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ea5c8207b135b93afb8cce651a26b1606d0c6e967edc06091e261de7475dace5",
+				"dweb:/ipfs/QmXWQHU45hJWmuCiWKjR3tsVh11LwkNEW6fs2Yhvd41Q7a"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x5c26b39d26f7ed489e555d955dcd3e01872972e71fdd1528e93ec164e4f23385",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://efdc632af6960cf865dbc113665ea1f5b90eab75cc40ec062b2f6ae6da582017",
+				"dweb:/ipfs/QmfAZFDuG62vxmAN9DnXApv7e7PMzPqi4RkqqZHLMSQiY5"
+			]
+		},
+		"@openzeppelin/contracts/utils/Pausable.sol": {
+			"keccak256": "0x5d1b1dcbc0396f44c1c8d554857f71e3187503bf1e54062bf9ec6782e21f3a08",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9aa7fa580393aab7ca3d9f606f5ab7434d51e1c0f3632a593fca82c80ef8cc4c",
+				"dweb:/ipfs/QmRy84N7QfkwBM2AeR7UB5G1PPHdRLi6s1iyzAwCzevcHe"
+			]
+		},
+		"@openzeppelin/contracts/utils/ReentrancyGuard.sol": {
+			"keccak256": "0x7ff0067f2d7df4187eaa1cb4800949b929602c9d9cb20fcaee6922a7613ef2fb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://78aa63fd7fbb8df2942b6c6e7bd89349507e306edbd5909ee8d9575c31be57e5",
+				"dweb:/ipfs/Qmf6z9KWKCJCfEVokgTBhBVq5yHtE6is31N8AV5BHdMkqQ"
+			]
+		},
+		"contracts/libs/LibEIP712.sol": {
+			"keccak256": "0xa5d8de1142f6cbbe28d014f52a886f934f47076e17d91af6cec5d04fcee12a59",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://946271e8ca962d1cda119dfb1213eb32d6b275f241d7634c4cbed3b63677629a",
+				"dweb:/ipfs/QmSfMFYf4rUXNVNSC69mSHmKudQACECD8tXu72Mh4Aye44"
+			]
+		},
+		"contracts/libs/LibOrder.sol": {
+			"keccak256": "0xb1749d8a85c3374856b160dc952828a404f8a6809eae689ba3d26bf44e6a0b8f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cc63ed7776fc8acb1232a5e9a997f4849e31984f34945398da80d2ebd2cff9bc",
+				"dweb:/ipfs/QmWgHgUs1kMazRRcaeeQUECaujz2jGGwWew64GGynEUET4"
+			]
+		},
+		"contracts/libs/LibSignatureValidator.sol": {
+			"keccak256": "0x583cfefe36e0c3ffcf46353201aef27f77f6adf9446fd07959083d355219956f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0717e17c33ffc044b34e10cfcf1a0bd6c0ff0860ab2671c7ff6134ddf91a3df4",
+				"dweb:/ipfs/QmP5cs5eFQTkxKkDcp4UCEBPKbnXinWmxRMnbr2raiU97V"
+			]
+		},
+		"contracts/market/EnglishExchange.sol": {
+			"keccak256": "0x2a20c346bcc01343ff4d7ba4d89727d26d7861c745c5f34f9cf3619cb59bbba2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41cca4322c8031f6921406331eb42784959c80e104f0af2bdef11321b928ad60",
+				"dweb:/ipfs/QmTRaMenYxUTiecFnAdNpMVQVjoZy1XSVM5gi9bPFfV99w"
+			]
+		},
+		"contracts/utils/SafeDecimalMath.sol": {
+			"keccak256": "0xdeeee4fdc9a2aade5789a47e8f6a105d311993a2912ecbb769ddfb7f354feefe",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://014908f4572f706fcf5fb1dfd2430bdaa7eee1c63e60875b32c6603c6b27e0df",
+				"dweb:/ipfs/QmSb62Djt1gh4aUBTT2b4ipkxaDyyGViW9AGpkByo2taU1"
+			]
+		}
+	},
+	"version": 1
+}

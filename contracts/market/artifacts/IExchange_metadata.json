@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.6.9+commit.3e3065ac"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_nft",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "onSale",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/market/IExchange.sol": "IExchange"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/market/IExchange.sol": {
+			"keccak256": "0xe77ab52d9f6d816e6d80eac07312500b8cb6542d21098ae61e698c291d9a9f49",
+			"urls": [
+				"bzz-raw://7caf02c6369b6d676fc1550df00bf7fe36b4b38b5875e0df49fc3652a888b995",
+				"dweb:/ipfs/QmbPx8S2mCNdJaiW2qsyxuyxUGDBvPS7pRU1jAWPybTAeE"
+			]
+		}
+	},
+	"version": 1
+}
