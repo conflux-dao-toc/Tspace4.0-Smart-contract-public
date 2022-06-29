@@ -1,6 +1,6 @@
 ### 合约说明：
     部署的合约共有四个：
-    1、NFT合约，contracts/market/CFXBJGENESIS.sol （这是1.0版本，建议使用最新的2.0版本。详见https://forum.conflux.fun/t/conflux/15538 Conflux社区NFT标准规范及DEMO）
+    1、NFT合约，contracts/art/*.sol （建议使用最新的2.0版本。详见https://forum.conflux.fun/t/conflux/15538 Conflux社区NFT标准规范及DEMO）
     2、交易合约，contracts/market/FixedExchangeV2.sol
     3、拍卖合约，contracts/market/EnglishExchange.sol
     4、usdt-cfx价格预言机
